@@ -3,7 +3,9 @@ docs/
 test_cam.py
 
 __pycache__/
-*.pyc
+**/__pycache__/
+*.py[cod]
+*$py.class
 artifacts/
 checkpoints/
 .pytest_cache/
