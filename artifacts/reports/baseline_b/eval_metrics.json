@@ -1,0 +1,48 @@
+{
+  "model_path": "artifacts\\models\\baseline_b\\geometric_feature_classifier.pkl",
+  "feature_path": "artifacts\\features\\baseline_b_geometric_features.csv",
+  "split": "test",
+  "sample_count": 211,
+  "feature_names": [
+    "left_ear",
+    "right_ear",
+    "mean_ear",
+    "ear_diff",
+    "mar",
+    "mar_to_ear",
+    "pitch_degrees",
+    "yaw_degrees",
+    "roll_degrees"
+  ],
+  "metrics": {
+    "accuracy": 0.8199052132701422,
+    "macro_precision": 0.8197340043134436,
+    "macro_recall": 0.8200215866162979,
+    "macro_f1": 0.8198040273282992,
+    "positive_false_negative_rate": 0.1834862385321101,
+    "confusion_matrix": [
+      [
+        84,
+        18
+      ],
+      [
+        20,
+        89
+      ]
+    ],
+    "per_class": {
+      "open_or_alert": {
+        "precision": 0.8076923076923077,
+        "recall": 0.8235294117647058,
+        "f1": 0.8155339805825242,
+        "support": 102.0
+      },
+      "closed_or_drowsy": {
+        "precision": 0.8317757009345794,
+        "recall": 0.8165137614678899,
+        "f1": 0.8240740740740741,
+        "support": 109.0
+      }
+    }
+  }
+}

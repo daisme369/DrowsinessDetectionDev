@@ -1,0 +1,105 @@
+{
+  "epoch": 2,
+  "clip": {
+    "accuracy": 0.4426460239268121,
+    "balanced_accuracy": 0.44092297097417504,
+    "macro_precision": 0.46046906491462963,
+    "macro_recall": 0.44092297097417504,
+    "macro_f1": 0.41771461684931793,
+    "weighted_f1": 0.41916729178749884,
+    "per_class": {
+      "alert": {
+        "precision": 0.4616840113528855,
+        "recall": 0.49745158002038736,
+        "f1": 0.478900883218842,
+        "support": 981.0
+      },
+      "low_vigilant": {
+        "precision": 0.413840830449827,
+        "recall": 0.6395721925133689,
+        "f1": 0.5025210084033613,
+        "support": 935.0
+      },
+      "drowsy": {
+        "precision": 0.5058823529411764,
+        "recall": 0.1857451403887689,
+        "f1": 0.2717219589257504,
+        "support": 926.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        488,
+        379,
+        114
+      ],
+      [
+        283,
+        598,
+        54
+      ],
+      [
+        286,
+        468,
+        172
+      ]
+    ],
+    "class_support": {
+      "alert": 981,
+      "low_vigilant": 935,
+      "drowsy": 926
+    },
+    "sample_count": 2842
+  },
+  "video": {
+    "accuracy": 0.5185185185185185,
+    "balanced_accuracy": 0.5185185185185186,
+    "macro_precision": 0.5555555555555555,
+    "macro_recall": 0.5185185185185186,
+    "macro_f1": 0.4894482583269768,
+    "weighted_f1": 0.4894482583269769,
+    "per_class": {
+      "alert": {
+        "precision": 0.5,
+        "recall": 0.5555555555555556,
+        "f1": 0.5263157894736842,
+        "support": 9.0
+      },
+      "low_vigilant": {
+        "precision": 0.5,
+        "recall": 0.7777777777777778,
+        "f1": 0.6086956521739131,
+        "support": 9.0
+      },
+      "drowsy": {
+        "precision": 0.6666666666666666,
+        "recall": 0.2222222222222222,
+        "f1": 0.3333333333333333,
+        "support": 9.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        5,
+        3,
+        1
+      ],
+      [
+        2,
+        7,
+        0
+      ],
+      [
+        3,
+        4,
+        2
+      ]
+    ],
+    "class_support": {
+      "alert": 9,
+      "low_vigilant": 9,
+      "drowsy": 9
+    },
+    "sample_count": 27
+  }
+}

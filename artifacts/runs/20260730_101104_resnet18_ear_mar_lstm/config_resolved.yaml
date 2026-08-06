@@ -1,0 +1,166 @@
+project:
+  name: uta_rldd_drowsiness_development
+  random_seed: 42
+  output_dir: artifacts
+dataset:
+  root_dir: data/video
+  manifest_path: data/manifests/videos.csv
+  processed_dir: data/processed/baseline_d
+  label_mapping:
+    alert: 0
+    low_vigilant: 1
+    drowsy: 2
+  raw_label_mapping:
+    0: alert
+    5: low_vigilant
+    10: drowsy
+  expected_raw_labels:
+  - 0
+  - 5
+  - 10
+  video_extensions:
+  - .mp4
+  - .mov
+  - .m4v
+split:
+  mode: fixed
+  train_ratio: 0.7
+  validation_ratio: 0.15
+  test_ratio: 0.15
+  number_of_folds: 5
+  use_official_folds: false
+  random_seed: 42
+  output_dir: artifacts/splits
+sampling:
+  target_fps: 5
+face:
+  backend: mediapipe
+  bbox_margin_ratio: 0.15
+  align: true
+  minimum_detection_confidence: 0.5
+  minimum_landmark_confidence: 0.5
+  model_asset_path: artifacts/models/face_landmarker.task
+image:
+  width: 224
+  height: 224
+  channels: 3
+  color_space: RGB
+  normalization: imagenet
+  mean:
+  - 0.485
+  - 0.456
+  - 0.406
+  std:
+  - 0.229
+  - 0.224
+  - 0.225
+  save_jpeg_faces: false
+landmarks:
+  right_eye:
+  - 33
+  - 160
+  - 158
+  - 133
+  - 153
+  - 144
+  left_eye:
+  - 362
+  - 385
+  - 387
+  - 263
+  - 373
+  - 380
+  mouth_left_corner: 61
+  mouth_right_corner: 291
+  upper_inner_lip: 13
+  lower_inner_lip: 14
+behavior_features:
+  enabled: true
+  features:
+  - ear
+  - mar
+  normalize: zscore
+  ear_valid_range:
+  - 0.05
+  - 0.6
+  mar_valid_range:
+  - 0.0
+  - 1.5
+  epsilon: 1.0e-06
+missing_data:
+  max_consecutive_missing_frames: 3
+  minimum_valid_frame_ratio: 0.8
+  use_previous_bbox: true
+  interpolate_behavior_features: true
+  reject_invalid_clip: true
+clips:
+  sequence_length: 40
+  overlap_ratio: 0.3
+  stride_frames: 28
+  tail_policy: discard
+augmentation:
+  enabled: true
+  temporally_consistent: true
+  horizontal_flip_probability: 0.5
+  rotation_degrees: 5
+  brightness_jitter: 0.15
+  contrast_jitter: 0.15
+  saturation_jitter: 0.1
+  gaussian_blur_probability: 0.1
+experiment:
+  id: e4
+  name: resnet18_ear_mar_lstm
+  use_visual: true
+  use_behavior: true
+  temporal_model: lstm
+model:
+  cnn:
+    architecture: resnet18
+    pretrained: true
+    strict_pretrained: false
+    output_dimension: 512
+    initial_freeze_epochs: 10
+    unfreeze_stages:
+    - layer4
+  fusion:
+    mode: concatenate
+    behavior_dimension: 2
+    fused_dimension: 514
+  lstm:
+    hidden_size: 128
+    num_layers: 1
+    bidirectional: false
+    batch_first: true
+  pooling:
+    mode: masked_mean
+  classifier:
+    dropout: 0.3
+    number_of_classes: 3
+training:
+  random_seed: 42
+  batch_size: 4
+  maximum_epochs: 5
+  loss: cross_entropy
+  optimizer: adamw
+  cnn_learning_rate: 1.0e-05
+  temporal_learning_rate: 0.0001
+  classifier_learning_rate: 0.0001
+  weight_decay: 0.0001
+  gradient_clip_norm: 1.0
+  early_stopping_patience: 7
+  scheduler: reduce_on_plateau
+  mixed_precision: true
+  num_workers: 0
+  class_weight_imbalance_threshold: 1.2
+  checkpoint_dir: checkpoints/baseline_d
+evaluation:
+  primary_metric: video_macro_f1
+  aggregate_method: mean_probability
+  save_clip_predictions: true
+  save_video_predictions: true
+  save_confusion_matrix: true
+explainability:
+  gradcam: false
+  temporal_occlusion: false
+  region_occlusion: false
+  export_error_cases: true

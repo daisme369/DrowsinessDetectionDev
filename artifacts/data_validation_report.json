@@ -1,0 +1,21 @@
+{
+  "video_count": 182,
+  "subject_count": 60,
+  "label_counts": {
+    "alert": 60,
+    "drowsy": 62,
+    "low_vigilant": 60
+  },
+  "duplicate_video_ids": [],
+  "subjects_missing_expected_labels": {},
+  "subjects_with_duplicate_labels": {
+    "32": {
+      "10": 2
+    },
+    "49": {
+      "10": 2
+    }
+  },
+  "invalid_video_count": 0,
+  "valid_video_count": 182
+}

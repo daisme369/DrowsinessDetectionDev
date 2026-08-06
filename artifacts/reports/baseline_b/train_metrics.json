@@ -1,0 +1,166 @@
+{
+  "config": "D:\\LabThayToan\\DrowsinessDetectionSys\\configs\\baseline_b.yaml",
+  "feature_path": "artifacts\\features\\baseline_b_geometric_features.csv",
+  "model_path": "artifacts\\models\\baseline_b\\geometric_feature_classifier.pkl",
+  "model_bytes": 6123844,
+  "architecture": "random_forest",
+  "feature_names": [
+    "left_ear",
+    "right_ear",
+    "mean_ear",
+    "ear_diff",
+    "mar",
+    "mar_to_ear",
+    "pitch_degrees",
+    "yaw_degrees",
+    "roll_degrees"
+  ],
+  "class_names": [
+    "open_or_alert",
+    "closed_or_drowsy"
+  ],
+  "class_counts": {
+    "train": {
+      "0": 744,
+      "1": 735
+    },
+    "val": {
+      "0": 214,
+      "1": 208
+    },
+    "test": {
+      "0": 102,
+      "1": 109
+    }
+  },
+  "elapsed_seconds": 0.44503760000225157,
+  "train_metrics": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "positive_false_negative_rate": 0.0,
+    "confusion_matrix": [
+      [
+        744,
+        0
+      ],
+      [
+        0,
+        735
+      ]
+    ],
+    "per_class": {
+      "open_or_alert": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 744.0
+      },
+      "closed_or_drowsy": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 735.0
+      }
+    }
+  },
+  "val_metrics": {
+    "accuracy": 0.8483412322274881,
+    "macro_precision": 0.8511116152450091,
+    "macro_recall": 0.8477039899352984,
+    "macro_f1": 0.847849111025982,
+    "positive_false_negative_rate": 0.1971153846153846,
+    "confusion_matrix": [
+      [
+        191,
+        23
+      ],
+      [
+        41,
+        167
+      ]
+    ],
+    "per_class": {
+      "open_or_alert": {
+        "precision": 0.8232758620689655,
+        "recall": 0.8925233644859814,
+        "f1": 0.8565022421524664,
+        "support": 214.0
+      },
+      "closed_or_drowsy": {
+        "precision": 0.8789473684210526,
+        "recall": 0.8028846153846154,
+        "f1": 0.8391959798994976,
+        "support": 208.0
+      }
+    }
+  },
+  "test_metrics": {
+    "accuracy": 0.8199052132701422,
+    "macro_precision": 0.8197340043134436,
+    "macro_recall": 0.8200215866162979,
+    "macro_f1": 0.8198040273282992,
+    "positive_false_negative_rate": 0.1834862385321101,
+    "confusion_matrix": [
+      [
+        84,
+        18
+      ],
+      [
+        20,
+        89
+      ]
+    ],
+    "per_class": {
+      "open_or_alert": {
+        "precision": 0.8076923076923077,
+        "recall": 0.8235294117647058,
+        "f1": 0.8155339805825242,
+        "support": 102.0
+      },
+      "closed_or_drowsy": {
+        "precision": 0.8317757009345794,
+        "recall": 0.8165137614678899,
+        "f1": 0.8240740740740741,
+        "support": 109.0
+      }
+    }
+  },
+  "model_config": {
+    "architecture": "random_forest",
+    "feature_names": [
+      "left_ear",
+      "right_ear",
+      "mean_ear",
+      "ear_diff",
+      "mar",
+      "mar_to_ear",
+      "pitch_degrees",
+      "yaw_degrees",
+      "roll_degrees"
+    ],
+    "random_forest_n_estimators": 200,
+    "random_forest_max_depth": null,
+    "logistic_max_iter": 1000,
+    "svm_c": 1.0,
+    "input_size": [
+      96,
+      96
+    ],
+    "num_classes": 2,
+    "grayscale": false,
+    "pretrained": false,
+    "dropout": 0.2,
+    "normalize_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalize_std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  }
+}

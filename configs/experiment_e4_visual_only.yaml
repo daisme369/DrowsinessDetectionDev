@@ -1,0 +1,21 @@
+extends: configs/development.yaml
+
+project:
+  name: uta_rldd_drowsiness_resnet18_lstm_visual_only
+  output_dir: artifacts/resnet18_lstm_visual_only
+
+experiment:
+  id: e4_visual_only
+  name: resnet18_lstm_visual_only
+  use_visual: true
+  use_behavior: false
+  temporal_model: lstm
+
+model:
+  fusion:
+    mode: concatenate
+    behavior_dimension: 0
+    fused_dimension: 512
+
+training:
+  checkpoint_dir: checkpoints/baseline_d_visual_only

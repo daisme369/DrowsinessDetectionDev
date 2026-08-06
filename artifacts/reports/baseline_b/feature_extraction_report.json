@@ -1,0 +1,34 @@
+{
+  "config": "D:\\LabThayToan\\DrowsinessDetectionSys\\configs\\baseline_b.yaml",
+  "output": "artifacts\\features\\baseline_b_geometric_features.csv",
+  "feature_names": [
+    "left_ear",
+    "right_ear",
+    "mean_ear",
+    "ear_diff",
+    "mar",
+    "mar_to_ear",
+    "pitch_degrees",
+    "yaw_degrees",
+    "roll_degrees"
+  ],
+  "row_count": 2112,
+  "splits": {
+    "train": {
+      "total": 1512,
+      "detected": 1479,
+      "failed": 33
+    },
+    "valid": {
+      "total": 432,
+      "detected": 422,
+      "failed": 10
+    },
+    "test": {
+      "total": 216,
+      "detected": 211,
+      "failed": 5
+    }
+  },
+  "elapsed_seconds": 19.26984879997326
+}

@@ -1,0 +1,166 @@
+{
+  "config": "D:\\LabThayToan\\DrowsinessDetectionSys\\configs\\baseline_b.yaml",
+  "feature_path": "artifacts\\features\\baseline_b_geometric_features.csv",
+  "model_path": "artifacts\\models\\baseline_b\\geometric_feature_classifier_logistic.pkl",
+  "model_bytes": 1770,
+  "architecture": "logistic_regression",
+  "feature_names": [
+    "left_ear",
+    "right_ear",
+    "mean_ear",
+    "ear_diff",
+    "mar",
+    "mar_to_ear",
+    "pitch_degrees",
+    "yaw_degrees",
+    "roll_degrees"
+  ],
+  "class_names": [
+    "open_or_alert",
+    "closed_or_drowsy"
+  ],
+  "class_counts": {
+    "train": {
+      "0": 744,
+      "1": 735
+    },
+    "val": {
+      "0": 214,
+      "1": 208
+    },
+    "test": {
+      "0": 102,
+      "1": 109
+    }
+  },
+  "elapsed_seconds": 0.020595200010575354,
+  "train_metrics": {
+    "accuracy": 0.7052062204192021,
+    "macro_precision": 0.7052585642192938,
+    "macro_recall": 0.7051377002413869,
+    "macro_f1": 0.7051349116928345,
+    "positive_false_negative_rate": 0.30612244897959184,
+    "confusion_matrix": [
+      [
+        533,
+        211
+      ],
+      [
+        225,
+        510
+      ]
+    ],
+    "per_class": {
+      "open_or_alert": {
+        "precision": 0.7031662269129287,
+        "recall": 0.7163978494623656,
+        "f1": 0.7097203728362184,
+        "support": 744.0
+      },
+      "closed_or_drowsy": {
+        "precision": 0.7073509015256588,
+        "recall": 0.6938775510204082,
+        "f1": 0.7005494505494506,
+        "support": 735.0
+      }
+    }
+  },
+  "val_metrics": {
+    "accuracy": 0.7037914691943128,
+    "macro_precision": 0.7039125638774453,
+    "macro_recall": 0.7034956865564342,
+    "macro_f1": 0.7035101031391395,
+    "positive_false_negative_rate": 0.3173076923076923,
+    "confusion_matrix": [
+      [
+        155,
+        59
+      ],
+      [
+        66,
+        142
+      ]
+    ],
+    "per_class": {
+      "open_or_alert": {
+        "precision": 0.7013574660633484,
+        "recall": 0.7242990654205608,
+        "f1": 0.7126436781609196,
+        "support": 214.0
+      },
+      "closed_or_drowsy": {
+        "precision": 0.7064676616915423,
+        "recall": 0.6826923076923077,
+        "f1": 0.6943765281173595,
+        "support": 208.0
+      }
+    }
+  },
+  "test_metrics": {
+    "accuracy": 0.6824644549763034,
+    "macro_precision": 0.6823899371069182,
+    "macro_recall": 0.6825867961863645,
+    "macro_f1": 0.6823502977193574,
+    "positive_false_negative_rate": 0.3211009174311927,
+    "confusion_matrix": [
+      [
+        70,
+        32
+      ],
+      [
+        35,
+        74
+      ]
+    ],
+    "per_class": {
+      "open_or_alert": {
+        "precision": 0.6666666666666666,
+        "recall": 0.6862745098039216,
+        "f1": 0.6763285024154588,
+        "support": 102.0
+      },
+      "closed_or_drowsy": {
+        "precision": 0.6981132075471698,
+        "recall": 0.6788990825688074,
+        "f1": 0.6883720930232559,
+        "support": 109.0
+      }
+    }
+  },
+  "model_config": {
+    "architecture": "logistic_regression",
+    "feature_names": [
+      "left_ear",
+      "right_ear",
+      "mean_ear",
+      "ear_diff",
+      "mar",
+      "mar_to_ear",
+      "pitch_degrees",
+      "yaw_degrees",
+      "roll_degrees"
+    ],
+    "random_forest_n_estimators": 200,
+    "random_forest_max_depth": 8,
+    "logistic_max_iter": 1000,
+    "svm_c": 1.0,
+    "input_size": [
+      96,
+      96
+    ],
+    "num_classes": 2,
+    "grayscale": false,
+    "pretrained": false,
+    "dropout": 0.2,
+    "normalize_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalize_std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  }
+}

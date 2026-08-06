@@ -1,0 +1,15 @@
+{
+  "python": "3.11.15 | packaged by Anaconda, Inc. | (main, Jun 11 2026, 15:12:53) [MSC v.1942 64 bit (AMD64)]",
+  "executable": "C:\\Users\\Admin\\anaconda3\\envs\\drowsy\\python.exe",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "git_commit": "",
+  "cv2": "5.0.0",
+  "mediapipe": "0.10.35",
+  "numpy": "2.4.6",
+  "sklearn": "1.9.0",
+  "torch": "2.13.0+cu130",
+  "torchvision": "0.28.0+cu130",
+  "cuda_available": true,
+  "cuda_version": "13.0",
+  "gpu_name": "NVIDIA GeForce RTX 3070 Ti"
+}

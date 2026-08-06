@@ -1,0 +1,7 @@
+extends: configs/base.yaml
+
+project:
+  name: uta_rldd_drowsiness_five_fold
+
+split:
+  mode: five_fold

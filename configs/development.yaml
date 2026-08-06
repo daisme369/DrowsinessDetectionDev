@@ -1,0 +1,10 @@
+extends: configs/base.yaml
+
+project:
+  name: uta_rldd_drowsiness_development
+
+split:
+  mode: fixed
+
+training:
+  maximum_epochs: 5

@@ -1,0 +1,109 @@
+{
+  "split": "test",
+  "checkpoint": "checkpoints\\baseline_d\\best_video_macro_f1.pt",
+  "clips": "data\\processed\\baseline_d\\manifests\\clips.csv",
+  "behavior_stats": "artifacts\\preprocessing\\fixed_behavior_stats.json",
+  "loss": 3.177353889300927,
+  "clip": {
+    "accuracy": 0.26006191950464397,
+    "balanced_accuracy": 0.26032911360394845,
+    "macro_precision": 0.25941786837536607,
+    "macro_recall": 0.26032911360394845,
+    "macro_f1": 0.2596911299496723,
+    "weighted_f1": 0.25944800025175957,
+    "per_class": {
+      "alert": {
+        "precision": 0.2631004366812227,
+        "recall": 0.2502596053997923,
+        "f1": 0.25651942522618415,
+        "support": 963.0
+      },
+      "low_vigilant": {
+        "precision": 0.22708333333333333,
+        "recall": 0.2219959266802444,
+        "f1": 0.22451081359423275,
+        "support": 982.0
+      },
+      "drowsy": {
+        "precision": 0.2880698351115422,
+        "recall": 0.3087318087318087,
+        "f1": 0.2980431510286001,
+        "support": 962.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        241,
+        354,
+        368
+      ],
+      [
+        398,
+        218,
+        366
+      ],
+      [
+        277,
+        388,
+        297
+      ]
+    ],
+    "class_support": {
+      "alert": 963,
+      "low_vigilant": 982,
+      "drowsy": 962
+    },
+    "sample_count": 2907
+  },
+  "video": {
+    "accuracy": 0.18518518518518517,
+    "balanced_accuracy": 0.1851851851851852,
+    "macro_precision": 0.16498316498316498,
+    "macro_recall": 0.1851851851851852,
+    "macro_f1": 0.17407407407407405,
+    "weighted_f1": 0.17407407407407405,
+    "per_class": {
+      "alert": {
+        "precision": 0.2727272727272727,
+        "recall": 0.3333333333333333,
+        "f1": 0.3,
+        "support": 9.0
+      },
+      "low_vigilant": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 9.0
+      },
+      "drowsy": {
+        "precision": 0.2222222222222222,
+        "recall": 0.2222222222222222,
+        "f1": 0.2222222222222222,
+        "support": 9.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        3,
+        3,
+        3
+      ],
+      [
+        5,
+        0,
+        4
+      ],
+      [
+        3,
+        4,
+        2
+      ]
+    ],
+    "class_support": {
+      "alert": 9,
+      "low_vigilant": 9,
+      "drowsy": 9
+    },
+    "sample_count": 27
+  }
+}

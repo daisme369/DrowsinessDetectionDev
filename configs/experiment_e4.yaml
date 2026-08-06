@@ -1,0 +1,8 @@
+extends: configs/development.yaml
+
+experiment:
+  id: e4
+  name: resnet18_ear_mar_lstm
+  use_visual: true
+  use_behavior: true
+  temporal_model: lstm

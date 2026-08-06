@@ -1,0 +1,48 @@
+{
+  "backend": "onnx",
+  "model_path": "artifacts\\models\\baseline_b\\eye_classifier.onnx",
+  "model_bytes": 51336,
+  "split": "test",
+  "processed_samples": 216,
+  "measured_samples": 206,
+  "elapsed_seconds": 0.38761340000201017,
+  "effective_fps": 557.2562764829075,
+  "latency_ms": {
+    "mean": 0.45612815538510565,
+    "median": 0.44539999726112,
+    "p95": 0.5412750033428892,
+    "min": 0.3508000008878298,
+    "max": 0.70189999678405
+  },
+  "metrics": {
+    "accuracy": 0.8252427184466019,
+    "macro_precision": 0.8343466560350843,
+    "macro_recall": 0.8181128496917971,
+    "macro_f1": 0.8209214720370908,
+    "positive_false_negative_rate": 0.09009009009009009,
+    "confusion_matrix": [
+      [
+        69,
+        26
+      ],
+      [
+        10,
+        101
+      ]
+    ],
+    "per_class": {
+      "open_or_alert": {
+        "precision": 0.8734177215189873,
+        "recall": 0.7263157894736842,
+        "f1": 0.7931034482758621,
+        "support": 95.0
+      },
+      "closed_or_drowsy": {
+        "precision": 0.7952755905511811,
+        "recall": 0.9099099099099099,
+        "f1": 0.8487394957983194,
+        "support": 111.0
+      }
+    }
+  }
+}

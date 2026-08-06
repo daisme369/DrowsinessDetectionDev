@@ -1,0 +1,87 @@
+camera:
+  source: 0
+  width: 1280
+  height: 720
+  target_fps: 30
+
+landmarks:
+  detector: mediapipe
+  model_asset_path: artifacts/models/face_landmarker.task
+  max_num_faces: 1
+  refine_landmarks: true
+  min_detection_confidence: 0.5
+  min_face_presence_confidence: 0.5
+  min_tracking_confidence: 0.5
+  static_image_mode: false
+
+dataset:
+  root: data
+  train_split: train
+  val_split: valid
+  test_split: test
+  image_dir: images
+  label_dir: labels
+  # The provided YawDD Roboflow export contains face boxes.
+  # Baseline B uses those face boxes only to focus landmark extraction.
+  crop_mode: face
+  bbox_padding: 0.08
+  eye_band_y_min: 0.18
+  eye_band_y_max: 0.55
+  min_box_size: 12
+  class_names:
+    - open_or_alert
+    - closed_or_drowsy
+  class_id_to_label:
+    0: 0
+    1: 1
+
+model:
+  architecture: random_forest
+  feature_names:
+    - left_ear
+    - right_ear
+    - mean_ear
+    - ear_diff
+    - mar
+    - mar_to_ear
+    - pitch_degrees
+    - yaw_degrees
+    - roll_degrees
+  random_forest_n_estimators: 200
+  random_forest_max_depth:
+  logistic_max_iter: 1000
+  svm_c: 1.0
+  # Legacy pixel-CNN fields are kept for optional experiments, but are not used
+  # by the default frame-level geometric Baseline B.
+  input_size: [96, 96]
+  num_classes: 2
+  grayscale: false
+  pretrained: false
+  dropout: 0.2
+  normalize_mean: [0.485, 0.456, 0.406]
+  normalize_std: [0.229, 0.224, 0.225]
+
+training:
+  epochs: 12
+  batch_size: 32
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  num_workers: 0
+  seed: 42
+  use_class_weights: true
+  feature_path: artifacts/features/baseline_b_geometric_features.csv
+  output_dir: artifacts/models/baseline_b
+  report_dir: artifacts/reports/baseline_b
+
+inference:
+  backend: sklearn
+  model_path: artifacts/models/baseline_b/geometric_feature_classifier.pkl
+  checkpoint_path: artifacts/models/baseline_b/best.pt
+  onnx_path: artifacts/models/baseline_b/eye_classifier.onnx
+  closed_class_index: 1
+  confidence_threshold: 0.6
+
+display:
+  show_landmarks: true
+  show_metrics: true
+  window_name: "Baseline B Frame Feature Classifier"

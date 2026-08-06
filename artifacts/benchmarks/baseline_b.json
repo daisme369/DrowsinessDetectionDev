@@ -1,0 +1,48 @@
+{
+  "model_path": "artifacts\\models\\baseline_b\\geometric_feature_classifier.pkl",
+  "model_bytes": 6123844,
+  "feature_path": "artifacts\\features\\baseline_b_geometric_features.csv",
+  "split": "test",
+  "sample_count": 211,
+  "measured_samples": 201,
+  "elapsed_seconds": 2.104688099992927,
+  "effective_fps": 100.25238418970919,
+  "latency_ms": {
+    "mean": 10.0326855752075,
+    "median": 7.806800014805049,
+    "p95": 17.5052999984473,
+    "min": 7.171900011599064,
+    "max": 33.69770001154393
+  },
+  "metrics": {
+    "accuracy": 0.8258706467661692,
+    "macro_precision": 0.8247918318794607,
+    "macro_recall": 0.8267351416035102,
+    "macro_f1": 0.8252477829942619,
+    "positive_false_negative_rate": 0.1834862385321101,
+    "confusion_matrix": [
+      [
+        77,
+        15
+      ],
+      [
+        20,
+        89
+      ]
+    ],
+    "per_class": {
+      "open_or_alert": {
+        "precision": 0.7938144329896907,
+        "recall": 0.8369565217391305,
+        "f1": 0.8148148148148148,
+        "support": 92.0
+      },
+      "closed_or_drowsy": {
+        "precision": 0.8557692307692307,
+        "recall": 0.8165137614678899,
+        "f1": 0.835680751173709,
+        "support": 109.0
+      }
+    }
+  }
+}

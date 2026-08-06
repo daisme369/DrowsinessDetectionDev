@@ -1,0 +1,48 @@
+{
+  "backend": "pytorch",
+  "model_path": "artifacts\\models\\baseline_b_smoke\\best.pt",
+  "model_bytes": 67585,
+  "split": "test",
+  "processed_samples": 32,
+  "measured_samples": 28,
+  "elapsed_seconds": 0.1003768999944441,
+  "effective_fps": 318.7984486646949,
+  "latency_ms": {
+    "mean": 1.81596785686062,
+    "median": 1.8072500024572946,
+    "p95": 1.9674599981954088,
+    "min": 1.6704000008758157,
+    "max": 2.0329999970272183
+  },
+  "metrics": {
+    "accuracy": 0.25,
+    "macro_precision": 0.125,
+    "macro_recall": 0.5,
+    "macro_f1": 0.2,
+    "positive_false_negative_rate": 1.0,
+    "confusion_matrix": [
+      [
+        7,
+        0
+      ],
+      [
+        21,
+        0
+      ]
+    ],
+    "per_class": {
+      "open_or_alert": {
+        "precision": 0.25,
+        "recall": 1.0,
+        "f1": 0.4,
+        "support": 7.0
+      },
+      "closed_or_drowsy": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 21.0
+      }
+    }
+  }
+}

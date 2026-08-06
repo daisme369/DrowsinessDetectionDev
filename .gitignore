@@ -1,0 +1,12 @@
+data/
+docs/
+test_cam.py
+
+__pycache__/
+*.pyc
+artifacts/
+checkpoints/
+.pytest_cache/
+
+pytest-cache-files-*/
+

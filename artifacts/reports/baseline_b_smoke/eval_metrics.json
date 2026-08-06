@@ -1,0 +1,42 @@
+{
+  "checkpoint": "artifacts\\models\\baseline_b_smoke\\best.pt",
+  "split": "test",
+  "sample_count": 216,
+  "class_counts": {
+    "0": 105,
+    "1": 111
+  },
+  "trainable_parameters": 11930,
+  "loss": 0.6992808337564822,
+  "metrics": {
+    "accuracy": 0.4861111111111111,
+    "macro_precision": 0.24305555555555555,
+    "macro_recall": 0.5,
+    "macro_f1": 0.32710280373831774,
+    "positive_false_negative_rate": 1.0,
+    "confusion_matrix": [
+      [
+        105,
+        0
+      ],
+      [
+        111,
+        0
+      ]
+    ],
+    "per_class": {
+      "open_or_alert": {
+        "precision": 0.4861111111111111,
+        "recall": 1.0,
+        "f1": 0.6542056074766355,
+        "support": 105.0
+      },
+      "closed_or_drowsy": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 111.0
+      }
+    }
+  }
+}
